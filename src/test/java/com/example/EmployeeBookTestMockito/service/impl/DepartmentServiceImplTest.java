@@ -24,15 +24,15 @@ public class DepartmentServiceImplTest {
     private DepartmentServiceImpl departmentService;
 
     private final Map<String, Employee> employees = new HashMap<>(){{
-        put("Ivan1Petrov1", new Employee("Ivan1", "Petrov1", 100000, 1));
-        put("Ivan2Petrov2", new Employee("Ivan2", "Petrov2", 120000, 1));
-        put("Ivan3Petrov3", new Employee("Ivan3", "Petrov3", 130000, 1));
+        put("Ivan1Petrov1", new Employee("Ivan1", "Petrov1", 100000, 1, 8900));
+        put("Ivan2Petrov2", new Employee("Ivan2", "Petrov2", 120000, 2, 6789));
+        put("Ivan3Petrov3", new Employee("Ivan3", "Petrov3", 130000, 3, 6799));
     }};
 
     @Test
     public void shouldCorrectlyCalculateSalarySum(){
         int departmentId = 1;
-        int expectedSum = 600000;
+        int expectedSum = 350000;
 
         Mockito.when(employeeService.getAll()).thenReturn(employees);
 

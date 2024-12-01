@@ -8,12 +8,14 @@ public class Employee {
     private final String lastName;
     private final int salary;
     private final int department;
+    private final int id;
 
-    public Employee(String firstName, String lastName, int salary, int department) {
+    public Employee(String firstName, String lastName, int salary, int department, int id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
         this.department = department;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -30,6 +32,10 @@ public class Employee {
 
     public int getDepartment() {
         return department;
+    }
+
+    public int getId(){
+        return id;
     }
 
     @Override

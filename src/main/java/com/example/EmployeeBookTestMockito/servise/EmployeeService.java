@@ -13,4 +13,8 @@ public interface EmployeeService {
     Employee find(String firstName, String lastName);
 
     Map<String, Employee> getAll();
+
+    void remove(int id);
+
+    Employee findById(int id);
 }

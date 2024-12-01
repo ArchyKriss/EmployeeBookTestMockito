@@ -21,7 +21,7 @@ public class EmployeeServiceImplTest {
     @Test
     public void shouldCorrectlyAddNewEmployee(){
 
-        Employee employeeToAdd = new Employee("Ivan", "Ivanov", 30000, 2);
+        Employee employeeToAdd = new Employee("Ivan", "Ivanov", 30000, 2, 6785);
 
         Employee addedEmployee = employeeService.add(
                 employeeToAdd.getFirstName(),
@@ -35,7 +35,7 @@ public class EmployeeServiceImplTest {
     @Test
     public void shouldCorrectlyRemoveNewEmployee(){
 
-        Employee employeeToRemove = new Employee("Ivan", "Ivanov", 30000, 2);
+        Employee employeeToRemove = new Employee("Ivan", "Ivanov", 30000, 2, 6785);
 
         Employee addedEmployee = employeeService.add(
                 employeeToRemove.getFirstName(),
@@ -45,18 +45,22 @@ public class EmployeeServiceImplTest {
 
         Assertions.assertEquals(employeeToRemove, addedEmployee);
 
+        employeeService.remove(addedEmployee.getId());
+
     }
 
     @Test
     public void shouldCorrectlyFindNewEmployee(){
 
-        Employee employeeToFind = new Employee("Ivan", "Ivanov", 30000, 2);
+        Employee employeeToFind = new Employee("Ivan", "Ivanov", 30000, 2, 6785);
 
         Employee addedEmployee = employeeService.add(
                 employeeToFind.getFirstName(),
                 employeeToFind.getLastName(),
                 employeeToFind.getSalary(),
                 employeeToFind.getDepartment());
+
+        Employee foundEmployee = employeeService.findById(addedEmployee.getId());
 
         Assertions.assertEquals(employeeToFind, addedEmployee);
 
